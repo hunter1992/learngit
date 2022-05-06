@@ -69,3 +69,4 @@ git pull
 ```
 git log
 ```
+可以打开“--pretty=oneline”开关，只将commit id显示在一行内。
