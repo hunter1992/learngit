@@ -79,3 +79,12 @@ HEAD^表示上一个版本，依次类推，但当需要退回的版本代数比
 ```
 git reset --hard HEAD^
 ```
+#### step2.1 如果回退后又后悔了，想回到新的版本
+先找到之前提交本地仓库时，每个版本的commit id：
+```
+git reflog
+```
+找到你想前往的版本，记住commit id的一部分，前往：
+```
+git reset --hard COMMIT ID
+```
