@@ -64,3 +64,8 @@ git status
 ```
 git pull
 ```
+## 4.版本回退
+### step1. 查看版本变化的历史记录
+```
+git log
+```
