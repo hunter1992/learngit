@@ -65,8 +65,17 @@ git status
 git pull
 ```
 ## 4.版本回退
-### step1. 查看版本变化的历史记录
+### step1. 查看版本变化的历史记录，知道回退到哪里
 ```
 git log
 ```
 可以打开“--pretty=oneline”开关，只将commit id显示在一行内。
+### step2. 开始回退
+Git使用HEAD指针指向当前版本，回退本质是在操作HEAD指针。
+
+HEAD^表示上一个版本，依次类推，但当需要退回的版本代数比较多时，写成HEAD～100。
+
+回退到上一版运行：
+```
+git reset --hard HEAD^
+```
