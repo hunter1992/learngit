@@ -1,6 +1,5 @@
 " ====== ZHM's vimrc ======
 
-
 " ------ Part 1: Basic ------
 let mapleader=" "      "空格为leader键
 set number             "显示行号
@@ -48,10 +47,12 @@ map sl :set splitright<CR>:vsplit<CR>
 map sh :set nosplitright<CR>:vsplit<CR>
 map sk :set nosplitbelow<CR>:split<CR>
 map sj :set splitbelow<CR>:split<CR>
-map <LEADER>l <C-w>l
-map <LEADER>k <C-w>k
-map <LEADER>h <C-w>h
-map <LEADER>j <C-w>j
+
+"将g映射为Ctrl-w后配合hjkl跳转光标
+noremap <LEADER>h <C-w>h
+noremap <LEADER>j <C-w>j
+noremap <LEADER>k <C-w>k
+noremap <LEADER>l <C-w>l
 
 "调整分屏大小
 map <LEADER><up> :res +3<CR>
@@ -59,7 +60,9 @@ map <LEADER><down> :res -3<CR>
 map <LEADER><left> :vertical resize+3<CR>
 map <LEADER><right> :vertical resize-3<CR>
 
-"复制粘贴
+"使用Tab切换补全备选项
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " ------ Part 3: Plug-in ------
 call plug#begin('~/.vim/plugged')
@@ -69,7 +72,7 @@ call plug#begin('~/.vim/plugged')
      
      Plug 'tpope/vim-surround'                        "给文本加括号等
 
-     Plug 'valloric/youcompleteme'                    "自动补全
+     "Plug 'valloric/youcompleteme'                    "自动补全
 
      Plug 'chiel92/vim-autoformat'                    "自动格式化
 
@@ -98,8 +101,8 @@ nnoremap <F3> :Autoformat<CR>
 
 "设置C,C++为谷歌样式,
 "下一行中的Google可以换为LLVM、Mozilla、WebKit、Microsoft、GNU
-"let g:formatdef_clangformat_google = '"clang-format -style=Microsoft -"'
-"let g:formatters_c = ['clangformat_google']
+let g:formatdef_clangformat_google = '"clang-format -style=Microsoft -"'
+let g:formatters_c = ['clangformat_google']
 
 "缩进规则设置
 let g:autoformat_autoindent = 0
@@ -162,10 +165,11 @@ let g:ycm_add_preview_to_completeopt = 0
 
 "设置YCM起作用的文件类型
 let g:ycm_filetype_whitelist = {"c":1, "cpp":1, "python":1}
+"let g:ycm_filetype_whitelist = {"python":1}
 
 "设置python路径
-let g:ycm_python_interpreter_path = "/usr/bin/python3"
-let g:ycm_python_binary_path = "/usr/bin/python3"
+let g:ycm_python_interpreter_path = "/usr/bin/python"
+let g:ycm_python_binary_path = "/usr/bin/python"
 
 "设置配置文件路径
 let g:ycm_global_ycm_extra_conf = '/home/zhm/.vim/plugged/youcompleteme/.ycm_extra_conf.py'
