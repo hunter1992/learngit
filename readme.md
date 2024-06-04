@@ -48,7 +48,7 @@ git push origin main
 ```
 如果出现错误：failed to push som refs to……，则先执行下面的语句，把云端仓库先拉下来，再push回去
 ```
-gir push origin main
+git push origin main
 ```
 ## 2.推送本地仓库的更改到云端仓库
 做好1.2中的step1之后，运行
