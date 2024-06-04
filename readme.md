@@ -44,11 +44,11 @@ git remote rm origin
 后，再重新执行step3中的命令，即可成功。
 #### step4. 推送本地仓库到云端仓库
 ```
-git push origin master
+git push origin main
 ```
 如果出现错误：failed to push som refs to……，则先执行下面的语句，把云端仓库先拉下来，再push回去
 ```
-gir push origin master
+gir push origin main
 ```
 ## 2.推送本地仓库的更改到云端仓库
 做好1.2中的step1之后，运行
