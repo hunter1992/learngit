@@ -67,7 +67,7 @@ git remote add origin https://github.com/hunter1992/某仓库名字.git
 git remote add origin git@github.com:hunter1992/某仓库名字.git
 ```
 
-3.1 如果出现错误
+4. 如果step3中出现错误
 
 fatal: remote origin already exists，则执行以下语句：
 
@@ -77,7 +77,7 @@ git remote rm origin
 
 后，再重新执行step3中的命令，即可成功。
 
-4. 推送本地仓库到云端仓库
+5. 推送本地仓库到云端仓库
 
 ```
 git push origin main
